@@ -9,3 +9,4 @@ select *from cust_order where orderno::text like '5____';
 select *from item where itemno::text like '6____';
 insert into customer values(40001,'abi','chennai');
 insert into customer(customerno,cname,city)values(40002,'harianna','adhambakkam'),(40003,'jeeva','kovilpatti');
+this file is edited by raja saga
