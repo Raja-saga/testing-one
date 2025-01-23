@@ -1,0 +1,11 @@
+create database eco;
+create table customer(customerno bigint, cname varchar(30),city varchar(30));
+alter table customer add primary key(customerno);
+create table cust_order(orderno bigint primary key,odate date,customerno bigint references customer(customerno),ord_amt bigint);
+create table item( itemno bigint primary key, item_name varchar(30), unit_price bigint);
+create table order_item(orderno bigint references cust_order(orderno) primary key, itemno bigint references item(itemno), qty bigint);
+SELECT *FROM customer WHERE customerno::text LIKE '4____';
+select *from cust_order where orderno::text like '5____';
+select *from item where itemno::text like '6____';
+insert into customer values(40001,'abi','chennai');
+insert into customer(customerno,cname,city)values(40002,'harianna','adhambakkam'),(40003,'jeeva','kovilpatti');
